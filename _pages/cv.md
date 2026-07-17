@@ -9,54 +9,53 @@ redirect_from:
 
 {% include base_path %}
 
+Student in the Magistère of Fundamental Physics at Paris-Saclay University, passionate about theoretical physics.
+
 Education
 ======
-* test
+* Erasmus+ Exchange Program, Physics Department, Ludwig-Maximilians-Universität (LMU), Munich, Germany, Sept. 2026 -- 2027 (Expected)
+  * Advanced curriculum in Theoretical Physics.
 
-Work experience
+* Magistère in Fundamental Physics, Paris-Saclay University, Orsay, France, 2025 -- Present
+  * Advanced track in Fundamental Physics with electives focused on Theoretical Physics: mathematical physics and general relativity, path integrals, cosmology, and group theory.
+
+* Classes Préparatoires aux Grandes Écoles (CPGE), Lycée Albert Schweitzer, Mulhouse, France, 2022 -- 2025
+  * Intensive 3-year undergraduate program in Mathematics and Physics (PCSI / PSI*).
+
+* High School Diploma (Baccalauréat), Lycée Amélie Zurcher, Wittelsheim, France, 2019 -- 2022
+  * Highest Honors (Mention Très Bien), European Section. Specializations: Physics-Chemistry and Mathematics (Advanced Mathematics option).
+
+Academic Projects
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* TIPE (Research Project) 2024–2025: "Composing the Inaudible: When biological signals become music"
+  * Translated EEG signals into melodies using Pure Data. Designed and developed an EEG device in the laboratory.
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* TIPE (Research Project) 2023–2024: "Study of Rotation in Breakdance: The headspin movement"
+  * Conducted video analysis using Latis Pro. Modeled the dynamic movement of the dancer.
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
+Work Experience
+======
+* STEM Tutor, Alveus, France, 09.2024 -- Present
+  * Tutoring high school and middle school students in Mathematics and Physics-Chemistry.
+
+* Private Tutor, Mulhouse (now via videoconference), 07.2023 -- Present
+  * Private lessons in Mathematics and Physics for high school students: personalized support and progress monitoring.
+
+* Versatile Employee, Leclerc (Retail), Cernay, France, 07.2023 -- 08.2023
+  * Shelving, inventory management, and customer service.
+
+Academic Honors
+======
+* Valedictorian (Major de promotion) in PSI*, Lycée Albert Schweitzer, 2024–2025
+* Meritorious Student Award, Lycée Albert Schweitzer, 2024
+
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Languages: French (Native), English (C1 – Cambridge English Skills Test), German (B2)
+* Programming: Python, C, LaTeX, Pure Data
 
-Publications
+Arts & Engagement
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+* Semi-professional Dance Company, Art'Corps Créative, 2016 -- Present
+  * Annual performances (theaters, festivals).
+  * Competitions: Amateur Night, Apollo Theater (New York, podium finish, Oct. 2023); Battle of the Year, Zénith de Montpellier (National Finals, 2019 and 2022).
