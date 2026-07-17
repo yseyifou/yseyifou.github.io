@@ -23,8 +23,8 @@
   #- title: "Guide"
   #  url: /markdown/
 main:
-  - title: "Teaching"
-    url: /teaching/
-
   - title: "CV"
     url: /cv/
+
+  - title: "Teaching"
+    url: /teaching/
