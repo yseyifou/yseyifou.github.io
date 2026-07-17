@@ -2,6 +2,7 @@
 title: "MBCHProcess – Mathematica Package for MB Representations"
 excerpt: "A Mathematica package for post-processing Mellin-Barnes representations and expressing series as generalized hypergeometric functions."
 collection: portfolio
+date: 2026-07-14
 ---
 
 This project is a **Mathematica package** that serves as a plugin for `MBConicHulls`. It automates the post-processing of Mellin-Barnes (MB) representations by identifying and expressing series as known generalized hypergeometric functions.
