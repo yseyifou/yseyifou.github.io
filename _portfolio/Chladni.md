@@ -2,6 +2,7 @@
 title: "Chladni Figures Simulation"
 excerpt: "Numerical simulation of vibrating plates and Chladni figures using C++ and Python."
 collection: portfolio
+date: 2026
 ---
 
 This project simulates the dynamic behavior of a vibrating brass plate using the **Finite Difference Time Domain (FDTD)** method to solve the biharmonic wave equation. It generates beautiful Chladni patterns — the geometric figures that form when sand accumulates on a vibrating plate's nodal lines.
