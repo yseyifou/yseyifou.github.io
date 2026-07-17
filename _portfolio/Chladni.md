@@ -26,4 +26,4 @@ The simulation supports three distinct physical setups:
 
 **Tech stack:** C++ (simulation core) + Python with NumPy, Matplotlib, SciPy (post-processing and visualization).
 
-🔗 [GitHub Repository](https://github.com/yseyifou/Chladni-Figures)
+[GitHub Repository](https://github.com/yseyifou/Chladni-Figures)
