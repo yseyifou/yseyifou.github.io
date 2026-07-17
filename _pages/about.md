@@ -1,13 +1,11 @@
 ---
 permalink: /
-title: "Home page"
+title: "Hello, world !"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
-
-Hello, world !
 
 I am Yanis Seyifou, a student in the Magistère of Fundamental Physics at Paris-Saclay University. I am deeply passionate about theoretical and mathematical physics.
 
