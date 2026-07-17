@@ -26,4 +26,4 @@ The package takes a resolved MB representation (output from `MBConicHulls`'s `Re
 
 **Authors:** Yanis Seyifou, Quentin Urzel, and Ewen Mahé (supervised by Dr. Samuel Friot, IJCLab, Orsay, France).
 
-🔗 [GitHub Repository](https://github.com/yseyifou/MBCHProcess)
+[GitHub Repository](https://github.com/yseyifou/MBCHProcess)
