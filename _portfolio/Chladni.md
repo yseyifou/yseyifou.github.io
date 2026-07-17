@@ -1,6 +1,6 @@
 ---
 title: "Chladni Figures Simulation"
-excerpt: "Numerical simulation of vibrating plates and Chladni figures using C++ and Python.<br/><img src='/images/500x300.png'>"
+excerpt: "Numerical simulation of vibrating plates and Chladni figures using C++ and Python."
 collection: portfolio
 ---
 
