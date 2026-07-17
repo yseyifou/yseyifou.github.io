@@ -1,6 +1,6 @@
 ---
 title: "MBCHProcess – Mathematica Package for MB Representations"
-excerpt: "A Mathematica package for post-processing Mellin-Barnes representations and expressing series as generalized hypergeometric functions.<br/><img src='/images/500x300.png'>"
+excerpt: "A Mathematica package for post-processing Mellin-Barnes representations and expressing series as generalized hypergeometric functions."
 collection: portfolio
 ---
 
