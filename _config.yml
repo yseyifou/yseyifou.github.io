@@ -23,7 +23,7 @@ repository               : "yseyifou/yseyifou.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "pfp.jpeg"
   name             : "Yanis Seyifou"
   pronouns         : "he/him"  
   bio              : "Student in Fundamental Physics"
