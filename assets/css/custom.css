@@ -499,6 +499,14 @@ h3:first-child {
   border-left: solid 1px #fff;
 }
 
+/* Fixed width for all nav items so the nav centre aligns with the logo */
+#header nav ul li a {
+  width: 10.2rem;
+  min-width: 0;
+  padding: 0;
+  text-align: center;
+}
+
 /* ------------------------------------------------------------------ */
 /* Nav wrap guard (8 items ≈ 960 px)                                   */
 /* ------------------------------------------------------------------ */
