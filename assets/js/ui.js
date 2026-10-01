@@ -207,58 +207,6 @@
 	document.addEventListener('click', onBadgeClick);
 
 	/* ---------------------------------------------------------------- */
-	/* Copy email + toast                                                */
-	/* ---------------------------------------------------------------- */
-
-	function showToast(message) {
-		var toast = document.createElement('div');
-		toast.className = 'toast';
-		toast.textContent = message;
-		toast.setAttribute('role', 'status');
-		toast.setAttribute('aria-live', 'polite');
-		document.body.appendChild(toast);
-		requestAnimationFrame(function () { toast.classList.add('show'); });
-		setTimeout(function () {
-			toast.classList.remove('show');
-			setTimeout(function () { toast.remove(); }, 300);
-		}, 2000);
-	}
-
-	function copyText(text, done) {
-		if (navigator.clipboard && navigator.clipboard.writeText) {
-			navigator.clipboard.writeText(text).then(done, function () { fallback(); });
-		} else {
-			fallback();
-		}
-		function fallback() {
-			var ta = document.createElement('textarea');
-			ta.value = text;
-			ta.style.position = 'fixed';
-			ta.style.opacity = '0';
-			document.body.appendChild(ta);
-			ta.select();
-			try { document.execCommand('copy'); done(); } catch (e) { /* ignore */ }
-			ta.remove();
-		}
-	}
-
-	function buildCopyButtons() {
-		$all('.contact-list a[href^="mailto:"]').forEach(function (a) {
-			var email = a.getAttribute('href').replace('mailto:', '');
-			var btn = document.createElement('button');
-			btn.type = 'button';
-			btn.className = 'badge';
-			btn.setAttribute('data-filter', '');
-			btn.innerHTML = '<span class="icon solid fa-copy"></span>&nbsp;Copy';
-			btn.style.marginLeft = '.5rem';
-			btn.addEventListener('click', function () {
-				copyText(email, function () { showToast('Email copied'); });
-			});
-			a.parentNode.appendChild(btn);
-		});
-	}
-
-	/* ---------------------------------------------------------------- */
 	/* Live GitHub repos                                                 */
 	/* ---------------------------------------------------------------- */
 
@@ -382,7 +330,6 @@
 
 	function init() {
 		makeCloseAccessible();
-		buildCopyButtons();
 		buildLangSwitch();
 		loadRepos();
 

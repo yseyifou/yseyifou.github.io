@@ -19,7 +19,6 @@
 	var ctx = canvas.getContext('2d');
 	var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-	var STORAGE_KEY = 'fx:on';
 	var LINK_DIST = 120;
 	var POINTER_RADIUS = 140;
 
@@ -36,22 +35,7 @@
 	/* State                                                             */
 	/* ---------------------------------------------------------------- */
 
-	function isEnabled() {
-		try {
-			return localStorage.getItem(STORAGE_KEY) !== 'off';
-		} catch (e) {
-			return true;
-		}
-	}
-
-	function setEnabled(on) {
-		try {
-			localStorage.setItem(STORAGE_KEY, on ? 'on' : 'off');
-		} catch (e) { /* private mode */ }
-	}
-
 	function targetOpacity() {
-		if (!isEnabled()) return 0;
 		if (document.body.classList.contains('is-article-visible')) return 0.12;
 		return 0.40;
 	}
@@ -208,48 +192,15 @@
 	});
 
 	/* ---------------------------------------------------------------- */
-	/* Toggle button                                                     */
-	/* ---------------------------------------------------------------- */
-
-	function buildToggle() {
-		var wrap = document.createElement('div');
-		wrap.className = 'fx-toggle';
-
-		var btn = document.createElement('button');
-		btn.type = 'button';
-		btn.setAttribute('aria-pressed', isEnabled() ? 'true' : 'false');
-
-		function label() {
-			btn.textContent = isEnabled() ? 'FX · On' : 'FX · Off';
-		}
-		label();
-
-		btn.addEventListener('click', function () {
-			var next = !isEnabled();
-			setEnabled(next);
-			btn.setAttribute('aria-pressed', next ? 'true' : 'false');
-			label();
-			if (next) {
-				currentOpacity = 0;
-				start();
-			}
-		});
-
-		wrap.appendChild(btn);
-		document.body.appendChild(wrap);
-	}
-
-	/* ---------------------------------------------------------------- */
 	/* Init                                                              */
 	/* ---------------------------------------------------------------- */
 
 	function init() {
 		resize();
 		initParticles();
-		buildToggle();
-		if (isEnabled() && !reduceMotion.matches) {
+		if (!reduceMotion.matches) {
 			start();
-		} else if (reduceMotion.matches) {
+		} else {
 			canvas.style.opacity = '0';
 		}
 	}

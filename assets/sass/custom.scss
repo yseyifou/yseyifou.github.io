@@ -435,31 +435,6 @@ h3:first-child {
 }
 
 /* ------------------------------------------------------------------ */
-/* Toast                                                               */
-/* ------------------------------------------------------------------ */
-
-.toast {
-	position: fixed;
-	bottom: 1.5rem;
-	left: 50%;
-	transform: translateX(-50%) translateY(1rem);
-	background: rgba(27, 31, 34, .95);
-	border: 1px solid var(--accent-border);
-	color: var(--accent-soft);
-	padding: .6rem 1.2rem;
-	border-radius: 4px;
-	font-size: .85rem;
-	letter-spacing: .05rem;
-	text-transform: uppercase;
-	pointer-events: none;
-	z-index: 10002;
-}
-
-.toast.show {
-	transform: translateX(-50%) translateY(0);
-}
-
-/* ------------------------------------------------------------------ */
 /* Language switcher                                                   */
 /* ------------------------------------------------------------------ */
 
@@ -487,42 +462,6 @@ h3:first-child {
 	background: var(--accent-dim);
 	border-color: var(--accent-border);
 	color: var(--accent-soft);
-}
-
-/* ------------------------------------------------------------------ */
-/* FX toggle                                                           */
-/* ------------------------------------------------------------------ */
-
-.fx-toggle {
-	position: fixed;
-	bottom: 1.2rem;
-	left: 1.2rem;
-	z-index: 10002;
-}
-
-.fx-toggle button {
-	padding: .4rem .9rem;
-	border: 1px solid rgba(255, 255, 255, .3);
-	border-radius: 4px;
-	font-size: .75rem;
-	letter-spacing: .15rem;
-	text-transform: uppercase;
-	color: #fff;
-	background: rgba(27, 31, 34, .7);
-	backdrop-filter: blur(4px);
-	cursor: pointer;
-	font-family: inherit;
-}
-
-.fx-toggle button:hover {
-	background: var(--accent-dim);
-	border-color: var(--accent-border);
-	color: var(--accent-soft);
-}
-
-.fx-toggle button:focus-visible {
-	outline: 2px solid var(--accent);
-	outline-offset: 2px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -565,6 +504,20 @@ h3:first-child {
 	#main article.reveal .cv-item {
 		animation: none;
 	}
+}
+
+/* ------------------------------------------------------------------ */
+/* Nav: 8 items → template adds a 1px divider at 50% and removes the   */
+/* left border of the 5th item. Hide the divider and restore the       */
+/* border so the nav stays uniform.                                    */
+/* ------------------------------------------------------------------ */
+
+#header nav.use-middle:after {
+	display: none;
+}
+
+#header nav.use-middle ul li.is-middle {
+	border-left: solid 1px #fff;
 }
 
 /* ------------------------------------------------------------------ */
