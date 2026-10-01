@@ -1,0 +1,8 @@
+node_modules/
+.sass-cache/
+*.log
+.DS_Store
+
+# CV LaTeX source — contains commercial fonts (licensing)
+tex/
+tex/Fonts/

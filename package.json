@@ -1,0 +1,14 @@
+{
+  "name": "yseyifou-github-io",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Personal site — Dimension by HTML5 UP",
+  "scripts": {
+    "css": "sass --no-source-map --style=expanded assets/sass/main.scss assets/css/main.css && sass --no-source-map --style=expanded assets/sass/custom.scss assets/css/custom.css",
+    "css:watch": "npm run css -- --watch",
+    "images": "python3 scripts/build-images.py"
+  },
+  "devDependencies": {
+    "sass": "1.77.8"
+  }
+}

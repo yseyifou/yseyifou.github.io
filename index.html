@@ -7,125 +7,77 @@
 <head>
   <title>Yanis Seyifou</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Academic portfolio of Yanis Seyifou — Fundamental Physics student at Paris-Saclay, on exchange at LMU Munich. Research in theoretical physics, Feynman integrals, Mellin-Barnes representation." />
+  <meta name="author" content="Yanis Seyifou" />
+  <meta name="theme-color" content="#1b1f22" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Yanis Seyifou" />
+  <meta property="og:description" content="Fundamental Physics student at Paris-Saclay, on exchange at LMU Munich. Research in theoretical physics." />
+  <meta property="og:url" content="https://yseyifou.github.io/" />
+  <meta property="og:image" content="https://yseyifou.github.io/images/og.png" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yanis Seyifou" />
+  <meta name="twitter:description" content="Fundamental Physics student at Paris-Saclay, on exchange at LMU Munich." />
+  <meta name="twitter:image" content="https://yseyifou.github.io/images/og.png" />
+
+  <link rel="canonical" href="https://yseyifou.github.io/" />
+  <link rel="alternate" hreflang="fr" href="https://yseyifou.github.io/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://yseyifou.github.io/" />
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+
+  <!-- Fonts: preconnect + link for earlier discovery (the @import in main.css stays) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600" />
 
   <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/custom.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- MathJax for physics equations -->
+  <!-- MathJax for physics equations (pinned) -->
   <script>
     window.MathJax = {
       tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
       svg: { fontCache: 'global' }
     };
   </script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 
-  <!-- Custom styles (particles overlay + Chladni demo + CV styling) -->
-  <style>
-    
-    #fx-canvas { position: fixed; inset: 0; z-index: 10001; pointer-events: none; opacity: .40; }
-
-    .equation { overflow-x: auto; padding: .5rem 0; font-size: .95rem; }
-
-    /* Timeline education */
-    .timeline { position: relative; padding-left: 2rem; margin: 1.5rem 0; }
-    .timeline::before {
-      content: ''; position: absolute; left: .5rem; top: .5rem; bottom: .5rem;
-      width: 2px; background: rgba(255,255,255,.2);
-    }
-    .timeline-item { position: relative; margin-bottom: 1.8rem; }
-    .timeline-item::before {
-      content: ''; position: absolute; left: -1.65rem; top: .3rem;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: #fff; border: 2px solid rgba(255,255,255,.5);
-    }
-    .timeline-item.current::before { background: #4fd1c5; border-color: #4fd1c5; box-shadow: 0 0 10px rgba(79,209,197,.6); }
-    .timeline-header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; margin-bottom: .3rem; }
-    .timeline-title { font-weight: 600; color: #fff; text-transform: none; letter-spacing: 0; font-size: 1rem; }
-    .timeline-place { color: rgba(255,255,255,.7); font-size: .9rem; font-style: italic; }
-    .timeline-date { font-size: .8rem; opacity: .7; letter-spacing: .05rem; text-transform: uppercase; }
-    .timeline-desc { font-size: .92rem; line-height: 1.5; opacity: .9; }
-
-    /* Badges */
-    .badge {
-      display: inline-block; padding: .25rem .7rem; margin: .15rem;
-      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2);
-      border-radius: 20px; font-size: .8rem; letter-spacing: .05rem;
-    }
-    .badge.highlight { background: rgba(79,209,197,.15); border-color: rgba(79,209,197,.4); color: #a0ede4; }
-
-    /* Project cards */
-    .project-card {
-      background: rgba(255,255,255,.04);
-      border-left: 3px solid rgba(255,255,255,.3);
-      padding: 1rem 1.2rem; margin: 1rem 0;
-      border-radius: 0 4px 4px 0;
-    }
-    .project-card h4 { text-transform: none; letter-spacing: .05rem; margin-bottom: .4rem; }
-    .project-card .meta { font-size: .8rem; opacity: .7; margin-bottom: .4rem; }
-
-    /* Awards */
-    .award {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: .6rem 0; border-bottom: 1px solid rgba(255,255,255,.1);
-      gap: 1rem;
-    }
-    .award:last-child { border-bottom: 0; }
-    .award .title { font-weight: 600; }
-    .award .year { font-size: .85rem; opacity: .6; flex-shrink: 0; }
-
-    /* Contact icons */
-    .contact-list { list-style: none; padding: 0; margin: 1rem 0; }
-    .contact-list li {
-      display: flex; align-items: center; gap: .8rem; padding: .5rem 0;
-      font-size: .95rem;
-    }
-    .contact-list a { border-bottom: none; color: inherit; }
-    .contact-list a:hover { color: #4fd1c5; }
-
-    /* Small caps + emphasis */
-    .emphasis { color: #a0ede4; font-weight: 600; }
-    code.inline {
-      background: rgba(79,209,197,.1); color: #a0ede4;
-      padding: .1rem .4rem; border-radius: 3px; font-size: .85rem;
-      border: none;
-    }
-
-    /* Section separators */
-    h3 { margin-top: 1.8rem; }
-    h3:first-child { margin-top: 0; }
-    
-    .project-header {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 1rem; margin-bottom: .6rem; flex-wrap: wrap;
-}
-.project-header h4 {
-  margin-bottom: .2rem; color: #fff;
-  text-transform: none; letter-spacing: .03rem;
-}
-.repo-link {
-  display: inline-flex; align-items: center; gap: .4rem;
-  padding: .35rem .8rem; border: 1px solid rgba(255,255,255,.3);
-  border-radius: 4px; font-size: .78rem; text-transform: uppercase;
-  letter-spacing: .1rem; color: #fff; white-space: nowrap;
-  transition: all .2s ease;
-}
-.repo-link:hover {
-  background: rgba(79, 209, 197, .15);
-  border-color: rgba(79, 209, 197, .5);
-  color: #a0ede4;
-}
-.tags { margin-top: .8rem; }
-    
-  </style>
+  <!-- JSON-LD: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yanis Seyifou",
+    "url": "https://yseyifou.github.io/",
+    "email": "mailto:yanis.seyifou@universite-paris-saclay.fr",
+    "jobTitle": "Fundamental Physics Student",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Paris-Saclay University" },
+      { "@type": "CollegeOrUniversity", "name": "Ludwig-Maximilians-Universität (LMU)" }
+    ],
+    "knowsAbout": ["Theoretical Physics", "Mathematical Physics", "Feynman Integrals", "Mellin-Barnes Representation"],
+    "sameAs": [
+      "https://github.com/yseyifou",
+      "https://www.linkedin.com/in/yanis-seyifou"
+    ]
+  }
+  </script>
 </head>
 
 <body class="is-preload">
 
+  <!-- Template background (Ken Burns + blur on panel open) -->
+  <div id="bg"></div>
+
   <!-- Interactive particle field (overlay) -->
-  <canvas id="fx-canvas"></canvas>
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
 
   <div id="wrapper">
 
@@ -148,6 +100,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#arts">Arts</a></li>
+          <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -278,7 +231,7 @@
             Developed <code class="inline">MBCHProcess</code>, an open-source Mathematica package
             automating the simplification of complex multi-variable series into
             generalized hypergeometric functions
-            &rarr; <a href="https://github.com/yseyifou/MBCHProcess" target="_blank">GitHub</a>.
+            &rarr; <a href="https://github.com/yseyifou/MBCHProcess" target="_blank" rel="noopener noreferrer">GitHub</a>.
           </li>
         </ul>
 
@@ -292,13 +245,13 @@
   </p>
 
   <!-- MBCHProcess -->
-  <div class="project-card">
+  <div class="project-card" data-tags="mathematica wolfram-language symbolic-computing feynman-integrals">
     <div class="project-header">
       <div>
         <h4>MBCHProcess</h4>
-        <div class="meta">Mathematica package &middot; Research tool &middot; 2026</div>
+        <div class="meta">Wolfram Language package &middot; Research tool &middot; 2026</div>
       </div>
-      <a href="https://github.com/yseyifou/MBCHProcess" target="_blank" class="repo-link">
+      <a href="https://github.com/yseyifou/MBCHProcess" target="_blank" rel="noopener noreferrer" class="repo-link">
         <span class="icon brands fa-github"></span> View repo
       </a>
     </div>
@@ -309,20 +262,20 @@
       it is a direct add-on to <code class="inline">MBConicHulls</code>.
     </p>
     <div class="tags">
-      <span class="badge">Mathematica</span>
+      <span class="badge">Wolfram Language</span>
       <span class="badge">Symbolic computing</span>
       <span class="badge highlight">Feynman integrals</span>
     </div>
   </div>
 
   <!-- Chladni Figures -->
-  <div class="project-card">
+  <div class="project-card" data-tags="c numerical-methods pdes">
     <div class="project-header">
       <div>
         <h4>Chladni Figures</h4>
         <div class="meta">Numerical simulation &middot; Mathematical physics</div>
       </div>
-      <a href="https://github.com/yseyifou/Chladni-Figures" target="_blank" class="repo-link">
+      <a href="https://github.com/yseyifou/Chladni-Figures" target="_blank" rel="noopener noreferrer" class="repo-link">
         <span class="icon brands fa-github"></span> View repo
       </a>
     </div>
@@ -332,15 +285,14 @@
       characteristic patterns observed when sand accumulates on a vibrating surface.
     </p>
     <div class="tags">
-      <span class="badge">Python</span>
-      <span class="badge">NumPy</span>
-      <span class="badge">Matplotlib</span>
+      <span class="badge">C++</span>
+      <span class="badge">Numerical methods</span>
       <span class="badge highlight">PDEs</span>
     </div>
   </div>
 
   <!-- Lock-exchange -->
-  <div class="project-card">
+  <div class="project-card" data-tags="python opencv fluid-mechanics gravity-currents">
     <div class="project-header">
       <div>
         <h4>Lock-exchange flows</h4>
@@ -365,7 +317,7 @@
   </div>
 
   <!-- TIPE EEG -->
-  <div class="project-card">
+  <div class="project-card" data-tags="pure-data hardware signal-processing">
     <div class="project-header">
       <div>
         <h4>T.I.P.E. 2024&ndash;2025 &mdash; Composing the Inaudible</h4>
@@ -386,7 +338,7 @@
   </div>
 
   <!-- TIPE Breakdance -->
-  <div class="project-card">
+  <div class="project-card" data-tags="latis-pro classical-mechanics video-analysis">
     <div class="project-header">
       <div>
         <h4>T.I.P.E. 2023&ndash;2024 &mdash; Rotation in Breakdance</h4>
@@ -406,6 +358,21 @@
     </div>
   </div>
 
+  <!-- Live GitHub repos -->
+  <h3>GitHub</h3>
+  <ul id="repo-list" class="repo-list" aria-live="polite">
+    <li class="repo-card">
+      <div class="repo-name"><a href="https://github.com/yseyifou/Chladni-Figures" target="_blank" rel="noopener noreferrer">Chladni-Figures</a></div>
+      <div class="repo-desc">Numerical simulation of vibrating plates and Chladni figures</div>
+      <div class="repo-meta"><span class="lang">C++</span><span>★ 0</span><span>Updated 2026-07-17</span></div>
+    </li>
+    <li class="repo-card">
+      <div class="repo-name"><a href="https://github.com/yseyifou/MBCHProcess" target="_blank" rel="noopener noreferrer">MBCHProcess</a></div>
+      <div class="repo-desc">A MBConicHulls plugin that provides a processed result in terms of generalized hypergeometric functions</div>
+      <div class="repo-meta"><span class="lang">Wolfram Language</span><span>★ 0</span><span>Updated 2026-07-15</span></div>
+    </li>
+  </ul>
+
 </article>
 
       <!-- Skills -->
@@ -421,25 +388,32 @@
 
         <h3>Programming &amp; Tools</h3>
         <p>
-          <span class="badge">Python</span>
-          <span class="badge">C</span>
-          <span class="badge">Mathematica (Wolfram Language)</span>
-          <span class="badge">\(\LaTeX\)</span>
-          <span class="badge">Pure Data</span>
+          <span class="badge" data-filter="python" tabindex="0" role="button" aria-label="Filter projects by Python">Python</span>
+          <span class="badge" data-filter="c" tabindex="0" role="button" aria-label="Filter projects by C">C</span>
+          <span class="badge" data-filter="mathematica" tabindex="0" role="button" aria-label="Filter projects by Mathematica">Mathematica (Wolfram Language)</span>
+          <span class="badge">LaTeX</span>
+          <span class="badge" data-filter="pure-data" tabindex="0" role="button" aria-label="Filter projects by Pure Data">Pure Data</span>
           <span class="badge">Git</span>
-          <span class="badge">Latis Pro</span>
+          <span class="badge" data-filter="latis-pro" tabindex="0" role="button" aria-label="Filter projects by Latis Pro">Latis Pro</span>
         </p>
 
         <h3>Physics &amp; Mathematics</h3>
         <p>
           <span class="badge">Quantum Field Theory</span>
-          <span class="badge">Feynman Integrals</span>
+          <span class="badge" data-filter="feynman-integrals" tabindex="0" role="button" aria-label="Filter projects by Feynman Integrals">Feynman Integrals</span>
           <span class="badge">Complex Analysis</span>
           <span class="badge">Group Theory</span>
           <span class="badge">General Relativity</span>
           <span class="badge">Path Integrals</span>
           <span class="badge">Cosmology</span>
         </p>
+
+        <h3>Currently Learning</h3>
+        <ul>
+          <li>Advanced Quantum Field Theory — renormalisation, gauge theories.</li>
+          <li>General Relativity — differential geometry, black holes.</li>
+          <li>Complex Analysis — contour integration, residue theorem.</li>
+        </ul>
 
         <h3>Teaching Experience</h3>
         <ul>
@@ -482,6 +456,186 @@
         </p>
       </article>
 
+      <!-- CV -->
+      <article id="cv">
+        <h2>CV</h2>
+
+        <div class="cv-section">
+          <h3>Education</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Ludwig-Maximilians-Universität (LMU)</span>
+              <span class="cv-date">2026 &ndash; Present</span>
+            </div>
+            <div class="cv-sub">Munich, Germany &middot; Erasmus+ Program, Physics Department</div>
+            <ul>
+              <li>Advanced curriculum in Theoretical Physics: Quantum Field Theory, Particle Physics, General Relativity.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Paris-Saclay University</span>
+              <span class="cv-date">2025 &ndash; Present</span>
+            </div>
+            <div class="cv-sub">Orsay, France &middot; Magistère in Fundamental Physics</div>
+            <ul>
+              <li>Advanced track with electives in theoretical physics: mathematical physics, general relativity, path integrals, cosmology, group theory.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Lycée Albert Schweitzer</span>
+              <span class="cv-date">2022 &ndash; 2025</span>
+            </div>
+            <div class="cv-sub">Mulhouse, France &middot; CPGE (PCSI / PSI*)</div>
+            <ul>
+              <li>Intensive 3-year undergraduate program in Mathematics and Physics.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Lycée Amélie Zurcher</span>
+              <span class="cv-date">2019 &ndash; 2022</span>
+            </div>
+            <div class="cv-sub">Wittelsheim, France &middot; Baccalauréat</div>
+            <ul>
+              <li>Highest Honors (Mention Très Bien), European Section. Specializations: Physics-Chemistry and Mathematics (Advanced Mathematics option).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Research Experience</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Research Intern in Theoretical Physics</span>
+              <span class="cv-date">06.2026 &ndash; 07.2026</span>
+            </div>
+            <div class="cv-sub">IJCLab, Orsay, France</div>
+            <ul>
+              <li>Evaluated two-loop sunrise-type Feynman integrals using the Mellin-Barnes representation within a Mathematica toolchain (<code class="inline">AMBRE</code>, <code class="inline">MBConicHulls</code>, <code class="inline">MBResolve</code>, <code class="inline">SubTropica</code>).</li>
+              <li>Developed <code class="inline">MBCHProcess</code>, an open-source Mathematica package automating the simplification of complex series into generalized hypergeometric functions.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Academic Projects</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Lock-exchange flows</span>
+              <span class="cv-date">2024 &ndash; 2025</span>
+            </div>
+            <div class="cv-sub">Experimental fluid mechanics &middot; w/ Alban Maussang</div>
+            <ul>
+              <li>Experimental and numerical study of gravity currents in a stratified fluid. Compared measurements to the theoretical predictions of Benjamin (1968) and Shin et al. (2004).</li>
+              <li>Front tracking by image processing, front velocity from linear regression, objective measurement of the current height. Results at Re ~ 10^4 - 10^5.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">T.I.P.E. 2024&ndash;2025 &mdash; Composing the Inaudible</span>
+            </div>
+            <div class="cv-sub">When biological signals become music</div>
+            <ul>
+              <li>Translated EEG signals into melodies using Pure Data. Designed and developed a basic EEG device.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">T.I.P.E. 2023&ndash;2024 &mdash; Rotation in Breakdance</span>
+            </div>
+            <div class="cv-sub">The headspin movement</div>
+            <ul>
+              <li>Conducted video analysis using Latis Pro. Modeled the dynamic movement of the dancer.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Work Experience</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">STEM Tutor</span>
+              <span class="cv-date">09.2024 &ndash; Present</span>
+            </div>
+            <div class="cv-sub">Alveus, France</div>
+            <ul>
+              <li>Tutoring high school and middle school students in Mathematics and Physics-Chemistry.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Private Tutor</span>
+              <span class="cv-date">07.2023 &ndash; Present</span>
+            </div>
+            <div class="cv-sub">Mulhouse (now via videoconference)</div>
+            <ul>
+              <li>Private lessons in Mathematics and Physics for high school students: personalized support and progress monitoring.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Academic Honors</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Valedictorian (Major de promotion)</span>
+              <span class="cv-date">2024&ndash;2025</span>
+            </div>
+            <div class="cv-sub">PSI*, Lycée Albert Schweitzer</div>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Meritorious Student Award</span>
+              <span class="cv-date">2024</span>
+            </div>
+            <div class="cv-sub">Lycée Albert Schweitzer</div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Skills</h3>
+          <ul>
+            <li><strong>Languages</strong>: French (Native), English (C1 &ndash; Cambridge), German (B2).</li>
+            <li><strong>Programming &amp; Tools</strong>: Python, C, Mathematica (Wolfram Language), LaTeX, Pure Data.</li>
+          </ul>
+        </div>
+
+        <div class="cv-section">
+          <h3>Arts &amp; Engagement</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Semi-professional Dance Company</span>
+              <span class="cv-date">2016 &ndash; Present</span>
+            </div>
+            <div class="cv-sub">Art'Corps Créative</div>
+            <ul>
+              <li>Annual performances (theaters, festivals).</li>
+              <li><strong>Competitions</strong>: Amateur Night, Apollo Theater (New York, podium finish, Oct. 2023); Battle of the Year, Zénith de Montpellier (National Finals, 2019 and 2022).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-actions">
+          <a href="files/cv.pdf" class="button primary">Download CV (PDF)</a>
+          <button type="button" class="button" onclick="window.print()">Print / Save as PDF</button>
+        </div>
+      </article>
+
       <!-- Contact -->
       <article id="contact">
         <h2>Contact</h2>
@@ -501,7 +655,11 @@
           </li>
           <li>
             <span class="icon brands fa-github"></span>
-            <a href="https://github.com/yseyifou" target="_blank">github.com/yseyifou</a>
+            <a href="https://github.com/yseyifou" target="_blank" rel="noopener noreferrer">github.com/yseyifou</a>
+          </li>
+          <li>
+            <span class="icon brands fa-linkedin-in"></span>
+            <a href="https://www.linkedin.com/in/yanis-seyifou" target="_blank" rel="noopener noreferrer">linkedin.com/in/yanis-seyifou</a>
           </li>
           <li>
             <span class="icon solid fa-map-marker-alt"></span>
@@ -530,73 +688,9 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- Custom scripts: particle field + Chladni demo -->
-  <script>
-    // ---------- Particle field overlay ----------
-    (function () {
-      var canvas = document.getElementById('fx-canvas');
-      var ctx = canvas.getContext('2d');
-      var particles = [];
-      var COUNT = 70, LINK = 120;
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      function init() {
-        resize();
-        particles = [];
-        for (var i = 0; i < COUNT; i++) {
-          particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            vx: (Math.random() - .5) * .4,
-            vy: (Math.random() - .5) * .4,
-            r: Math.random() * 1.6 + .6
-          });
-        }
-      }
-      function step() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var i = 0; i < particles.length; i++) {
-          var p = particles[i];
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(160, 237, 228, .8)';
-          ctx.fill();
-        }
-        for (var a = 0; a < particles.length; a++) {
-          for (var b = a + 1; b < particles.length; b++) {
-            var dx = particles[a].x - particles[b].x;
-            var dy = particles[a].y - particles[b].y;
-            var d = Math.sqrt(dx * dx + dy * dy);
-            if (d < LINK) {
-              ctx.beginPath();
-              ctx.strokeStyle = 'rgba(160, 237, 228,' + (.35 * (1 - d / LINK)) + ')';
-              ctx.lineWidth = 1;
-              ctx.moveTo(particles[a].x, particles[a].y);
-              ctx.lineTo(particles[b].x, particles[b].y);
-              ctx.stroke();
-            }
-          }
-        }
-        requestAnimationFrame(step);
-      }
-      window.addEventListener('resize', resize);
-      init();
-      step();
-    })();
-
-    // Re-typeset MathJax when a panel opens
-    window.addEventListener('hashchange', function () {
-      if (window.MathJax && MathJax.typesetPromise) {
-        setTimeout(function () { MathJax.typesetPromise(); }, 350);
-      }
-    });
-  </script>
+  <!-- Custom scripts -->
+  <script defer src="assets/js/fx.js"></script>
+  <script defer src="assets/js/ui.js"></script>
 
 </body>
 </html>

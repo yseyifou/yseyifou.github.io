@@ -1,0 +1,642 @@
+/*
+	Custom layer — Yanis Seyifou
+	Loaded AFTER assets/css/main.css. Template files are never modified.
+	Self-contained: no template functions (_palette, _size, _font) are used.
+*/
+
+:root {
+	--accent: #4fd1c5;
+	--accent-soft: #a0ede4;
+	--accent-dim: rgba(79, 209, 197, .15);
+	--accent-border: rgba(79, 209, 197, .4);
+}
+
+/* ------------------------------------------------------------------ */
+/* Background                                                          */
+/* ------------------------------------------------------------------ */
+
+/* The template points to images/bg.jpg, which we remove.
+   Replace the background image entirely and strengthen the dark veil. */
+#bg::after {
+	background-image: image-set(
+		url('/images/fond.webp') type('image/webp'),
+		url('/images/fond.jpg') type('image/jpeg')
+	);
+}
+
+/* Veil at 0.70: the header and footer are white text directly on the image.
+   The top-centre of fond.jpg is near-white (#fdfdf3).
+   0.50 (template default) = 3.52:1 → fails WCAG AA. 0.70 = 6.84:1. */
+#bg::before {
+	background-image:
+		linear-gradient(to top, rgba(19, 21, 25, .70), rgba(19, 21, 25, .70)),
+		url('/images/overlay.png');
+}
+
+/* ------------------------------------------------------------------ */
+/* Particle canvas                                                     */
+/* ------------------------------------------------------------------ */
+
+#fx-canvas {
+	position: fixed;
+	inset: 0;
+	z-index: 2; /* between #bg (1) and #wrapper (3) — was 10001, above the text */
+	pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Education timeline                                                  */
+/* ------------------------------------------------------------------ */
+
+.timeline {
+	position: relative;
+	padding-left: 2rem;
+	margin: 1.5rem 0;
+}
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	left: .5rem;
+	top: .5rem;
+	bottom: .5rem;
+	width: 2px;
+	background: rgba(255, 255, 255, .2);
+}
+
+.timeline-item {
+	position: relative;
+	margin-bottom: 1.8rem;
+}
+
+.timeline-item::before {
+	content: '';
+	position: absolute;
+	left: -1.65rem;
+	top: .3rem;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: #fff;
+	border: 2px solid rgba(255, 255, 255, .5);
+}
+
+.timeline-item.current::before {
+	background: var(--accent);
+	border-color: var(--accent);
+	box-shadow: 0 0 10px rgba(79, 209, 197, .6);
+}
+
+.timeline-header {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: .5rem;
+	margin-bottom: .3rem;
+}
+
+.timeline-title {
+	font-weight: 600;
+	color: #fff;
+	text-transform: none;
+	letter-spacing: 0;
+	font-size: 1rem;
+}
+
+.timeline-place {
+	color: rgba(255, 255, 255, .7);
+	font-size: .9rem;
+	font-style: italic;
+}
+
+.timeline-date {
+	font-size: .8rem;
+	opacity: .7;
+	letter-spacing: .05rem;
+	text-transform: uppercase;
+}
+
+.timeline-desc {
+	font-size: .92rem;
+	line-height: 1.5;
+	opacity: .9;
+}
+
+/* ------------------------------------------------------------------ */
+/* Badges                                                              */
+/* ------------------------------------------------------------------ */
+
+.badge {
+	display: inline-block;
+	padding: .25rem .7rem;
+	margin: .15rem;
+	background: rgba(255, 255, 255, .08);
+	border: 1px solid rgba(255, 255, 255, .2);
+	border-radius: 20px;
+	font-size: .8rem;
+	letter-spacing: .05rem;
+	cursor: default;
+}
+
+.badge.highlight {
+	background: var(--accent-dim);
+	border-color: var(--accent-border);
+	color: var(--accent-soft);
+}
+
+/* Clickable badges (tag filter) */
+button.badge,
+.badge[data-filter] {
+	cursor: pointer;
+	font-family: inherit;
+	text-align: left;
+	transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+}
+
+button.badge:hover,
+.badge[data-filter]:hover {
+	background: var(--accent-dim);
+	border-color: var(--accent-border);
+	color: var(--accent-soft);
+}
+
+button.badge:focus-visible,
+.badge[data-filter]:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Project cards                                                       */
+/* ------------------------------------------------------------------ */
+
+.project-card {
+	background: rgba(255, 255, 255, .04);
+	border-left: 3px solid rgba(255, 255, 255, .3);
+	padding: 1rem 1.2rem;
+	margin: 1rem 0;
+	border-radius: 0 4px 4px 0;
+}
+
+.project-card h4 {
+	text-transform: none;
+	letter-spacing: .05rem;
+	margin-bottom: .4rem;
+}
+
+.project-card .meta {
+	font-size: .8rem;
+	opacity: .7;
+	margin-bottom: .4rem;
+}
+
+.project-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1rem;
+	margin-bottom: .6rem;
+	flex-wrap: wrap;
+}
+
+.project-header h4 {
+	margin-bottom: .2rem;
+	color: #fff;
+	text-transform: none;
+	letter-spacing: .03rem;
+}
+
+.repo-link {
+	display: inline-flex;
+	align-items: center;
+	gap: .4rem;
+	padding: .35rem .8rem;
+	border: 1px solid rgba(255, 255, 255, .3);
+	border-radius: 4px;
+	font-size: .78rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	color: #fff;
+	white-space: nowrap;
+	transition: all .2s ease;
+}
+
+.repo-link:hover {
+	background: var(--accent-dim);
+	border-color: var(--accent-border);
+	color: var(--accent-soft);
+}
+
+.tags {
+	margin-top: .8rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Awards                                                              */
+/* ------------------------------------------------------------------ */
+
+.award {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: .6rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+	gap: 1rem;
+}
+
+.award:last-child {
+	border-bottom: 0;
+}
+
+.award .title {
+	font-weight: 600;
+}
+
+.award .year {
+	font-size: .85rem;
+	opacity: .6;
+	flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Contact                                                             */
+/* ------------------------------------------------------------------ */
+
+.contact-list {
+	list-style: none;
+	padding: 0;
+	margin: 1rem 0;
+}
+
+.contact-list li {
+	display: flex;
+	align-items: center;
+	gap: .8rem;
+	padding: .5rem 0;
+	font-size: .95rem;
+}
+
+.contact-list a {
+	border-bottom: none;
+	color: inherit;
+}
+
+.contact-list a:hover {
+	color: var(--accent);
+}
+
+/* ------------------------------------------------------------------ */
+/* Emphasis & inline code                                              */
+/* ------------------------------------------------------------------ */
+
+.emphasis {
+	color: var(--accent-soft);
+	font-weight: 600;
+}
+
+code.inline {
+	background: var(--accent-dim);
+	color: var(--accent-soft);
+	padding: .1rem .4rem;
+	border-radius: 3px;
+	font-size: .85rem;
+	border: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Section separators                                                  */
+/* ------------------------------------------------------------------ */
+
+h3 {
+	margin-top: 1.8rem;
+}
+
+h3:first-child {
+	margin-top: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* GitHub repos (live)                                                 */
+/* ------------------------------------------------------------------ */
+
+.repo-list {
+	list-style: none;
+	padding: 0;
+	margin: 1.5rem 0 0;
+	display: grid;
+	gap: .8rem;
+}
+
+.repo-card {
+	background: rgba(255, 255, 255, .04);
+	border: 1px solid rgba(255, 255, 255, .12);
+	border-radius: 4px;
+	padding: .9rem 1.1rem;
+}
+
+.repo-card .repo-name {
+	font-weight: 600;
+	color: #fff;
+	font-size: .95rem;
+}
+
+.repo-card .repo-name a {
+	color: inherit;
+	border-bottom: none;
+}
+
+.repo-card .repo-name a:hover {
+	color: var(--accent);
+}
+
+.repo-card .repo-desc {
+	font-size: .85rem;
+ opacity: .8;
+	margin: .3rem 0;
+	line-height: 1.45;
+}
+
+.repo-card .repo-meta {
+	font-size: .75rem;
+	letter-spacing: .05rem;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .55);
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.repo-card .repo-meta .lang {
+	color: var(--accent-soft);
+}
+
+/* ------------------------------------------------------------------ */
+/* CV panel                                                            */
+/* ------------------------------------------------------------------ */
+
+.cv-section {
+	margin-bottom: 2rem;
+}
+
+.cv-section h3 {
+	margin-top: 0;
+	padding-bottom: .4rem;
+	border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.cv-item {
+	margin-bottom: 1.2rem;
+}
+
+.cv-item .cv-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.cv-item .cv-title {
+	font-weight: 600;
+	color: #fff;
+}
+
+.cv-item .cv-date {
+	font-size: .8rem;
+	letter-spacing: .05rem;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, .6);
+	white-space: nowrap;
+}
+
+.cv-item .cv-sub {
+	font-size: .85rem;
+	font-style: italic;
+	color: rgba(255, 255, 255, .7);
+	margin: .15rem 0 .35rem;
+}
+
+.cv-item ul {
+	margin: .3rem 0 0;
+	padding-left: 1.2rem;
+}
+
+.cv-item li {
+	font-size: .9rem;
+	line-height: 1.5;
+	margin-bottom: .25rem;
+}
+
+.cv-actions {
+	display: flex;
+	gap: .8rem;
+	flex-wrap: wrap;
+	margin-top: 1.5rem;
+}
+
+/* ------------------------------------------------------------------ */
+/* Toast                                                               */
+/* ------------------------------------------------------------------ */
+
+.toast {
+	position: fixed;
+	bottom: 1.5rem;
+	left: 50%;
+	transform: translateX(-50%) translateY(1rem);
+	background: rgba(27, 31, 34, .95);
+	border: 1px solid var(--accent-border);
+	color: var(--accent-soft);
+	padding: .6rem 1.2rem;
+	border-radius: 4px;
+	font-size: .85rem;
+	letter-spacing: .05rem;
+	text-transform: uppercase;
+	pointer-events: none;
+	z-index: 10002;
+}
+
+.toast.show {
+	transform: translateX(-50%) translateY(0);
+}
+
+/* ------------------------------------------------------------------ */
+/* Language switcher                                                   */
+/* ------------------------------------------------------------------ */
+
+.lang-switch {
+	position: fixed;
+	bottom: 1.2rem;
+	right: 1.2rem;
+	z-index: 10002;
+}
+
+.lang-switch a {
+	display: inline-block;
+	padding: .4rem .9rem;
+	border: 1px solid rgba(255, 255, 255, .3);
+	border-radius: 4px;
+	font-size: .75rem;
+	letter-spacing: .15rem;
+	text-transform: uppercase;
+	color: #fff;
+	background: rgba(27, 31, 34, .7);
+	backdrop-filter: blur(4px);
+}
+
+.lang-switch a:hover {
+	background: var(--accent-dim);
+	border-color: var(--accent-border);
+	color: var(--accent-soft);
+}
+
+/* ------------------------------------------------------------------ */
+/* FX toggle                                                           */
+/* ------------------------------------------------------------------ */
+
+.fx-toggle {
+	position: fixed;
+	bottom: 1.2rem;
+	left: 1.2rem;
+	z-index: 10002;
+}
+
+.fx-toggle button {
+	padding: .4rem .9rem;
+	border: 1px solid rgba(255, 255, 255, .3);
+	border-radius: 4px;
+	font-size: .75rem;
+	letter-spacing: .15rem;
+	text-transform: uppercase;
+	color: #fff;
+	background: rgba(27, 31, 34, .7);
+	backdrop-filter: blur(4px);
+	cursor: pointer;
+	font-family: inherit;
+}
+
+.fx-toggle button:hover {
+	background: var(--accent-dim);
+	border-color: var(--accent-border);
+	color: var(--accent-soft);
+}
+
+.fx-toggle button:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Reveal animation                                                    */
+/* ------------------------------------------------------------------ */
+
+#main article.reveal .timeline-item,
+#main article.reveal .project-card,
+#main article.reveal .award,
+#main article.reveal .badge,
+#main article.reveal .cv-item {
+	transition: opacity .4s ease, transform .4s ease;
+}
+
+#main article.reveal .timeline-item,
+#main article.reveal .project-card,
+#main article.reveal .award,
+#main article.reveal .badge,
+#main article.reveal .cv-item {
+	animation: reveal-item .45s ease both;
+	animation-delay: calc(var(--i, 0) * 40ms);
+}
+
+@keyframes reveal-item {
+	from {
+		opacity: 0;
+		transform: translateY(.6rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	#main article.reveal .timeline-item,
+	#main article.reveal .project-card,
+	#main article.reveal .award,
+	#main article.reveal .badge,
+	#main article.reveal .cv-item {
+		animation: none;
+	}
+}
+
+/* ------------------------------------------------------------------ */
+/* Nav wrap guard (8 items ≈ 960 px)                                   */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 1200px) {
+	#header nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+/* ------------------------------------------------------------------ */
+/* Focus visibility                                                    */
+/* ------------------------------------------------------------------ */
+
+a:focus-visible,
+button:focus-visible,
+.badge[data-filter]:focus-visible,
+.close:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Print                                                               */
+/* ------------------------------------------------------------------ */
+
+@media print {
+	#bg,
+	#fx-canvas,
+	.lang-switch,
+	.fx-toggle,
+	.toast,
+	.repo-link,
+	.cv-actions {
+		display: none !important;
+	}
+
+	body {
+		background: #fff;
+		color: #000;
+	}
+
+	#main article {
+		background: transparent;
+		color: #000;
+		width: 100%;
+		max-width: 100%;
+		padding: 0;
+	}
+
+	#main article h2,
+	#main article h3,
+	#main article h4,
+	#main article .cv-title,
+	#main article .timeline-title {
+		color: #000;
+	}
+
+	#main article a {
+		color: #000;
+		text-decoration: underline;
+	}
+
+	#main article a[href]::after {
+		content: " (" attr(href) ")";
+		font-size: .8em;
+	}
+
+	@page {
+		margin: 18mm;
+	}
+}

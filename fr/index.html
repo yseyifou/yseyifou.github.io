@@ -1,0 +1,696 @@
+<!DOCTYPE HTML>
+<!--
+  Dimension by HTML5 UP — personnalisé pour Yanis Seyifou
+  Licence: Creative Commons (garder le crédit HTML5 UP dans le footer)
+-->
+<html lang="fr">
+<head>
+  <title>Yanis Seyifou</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio académique de Yanis Seyifou — Étudiant en Physique Fondamentale à Paris-Saclay, en échange à LMU Munich. Recherche en physique théorique, intégrales de Feynman, représentation de Mellin-Barnes." />
+  <meta name="author" content="Yanis Seyifou" />
+  <meta name="theme-color" content="#1b1f22" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Yanis Seyifou" />
+  <meta property="og:description" content="Étudiant en Physique Fondamentale à Paris-Saclay, en échange à LMU Munich. Recherche en physique théorique." />
+  <meta property="og:url" content="https://yseyifou.github.io/fr/" />
+  <meta property="og:image" content="https://yseyifou.github.io/images/og.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Yanis Seyifou" />
+  <meta name="twitter:description" content="Étudiant en Physique Fondamentale à Paris-Saclay, en échange à LMU Munich." />
+  <meta name="twitter:image" content="https://yseyifou.github.io/images/og.png" />
+
+  <link rel="canonical" href="https://yseyifou.github.io/fr/" />
+  <link rel="alternate" hreflang="en" href="https://yseyifou.github.io/" />
+  <link rel="alternate" hreflang="x-default" href="https://yseyifou.github.io/" />
+
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+
+  <!-- Polices : preconnect + link pour découverte plus précoce -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600" />
+
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/custom.css" />
+  <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+
+  <!-- MathJax pour les équations de physique (épinglé) -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+
+  <!-- JSON-LD: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yanis Seyifou",
+    "url": "https://yseyifou.github.io/fr/",
+    "email": "mailto:yanis.seyifou@universite-paris-saclay.fr",
+    "jobTitle": "Étudiant en Physique Fondamentale",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Paris-Saclay University" },
+      { "@type": "CollegeOrUniversity", "name": "Ludwig-Maximilians-Universität (LMU)" }
+    ],
+    "knowsAbout": ["Physique Théorique", "Physique Mathématique", "Intégrales de Feynman", "Représentation de Mellin-Barnes"],
+    "sameAs": [
+      "https://github.com/yseyifou",
+      "https://www.linkedin.com/in/yanis-seyifou"
+    ]
+  }
+  </script>
+</head>
+
+<body class="is-preload">
+
+  <!-- Fond du template (Ken Burns + flou à l'ouverture d'un panneau) -->
+  <div id="bg"></div>
+
+  <!-- Champ de particules interactif (overlay) -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="logo"><span class="icon solid fa-atom"></span></div>
+      <div class="content">
+        <div class="inner">
+          <h1>Yanis Seyifou</h1>
+          <p>
+            Étudiant en Physique Fondamentale &middot; Paris-Saclay &rarr; LMU Munich
+          </p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#education">Formation</a></li>
+          <li><a href="#research">Recherche</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#arts">Arts</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main id="main">
+
+      <!-- Intro -->
+      <article id="intro">
+        <h2>Intro</h2>
+        <p>
+          Je suis étudiant au <strong>Magistère de Physique Fondamentale</strong> de
+          l'<strong>Université Paris-Saclay</strong>, actuellement en
+          <strong>échange Erasmus+</strong> à la
+          <strong>Ludwig-Maximilians-Universität (LMU)</strong> de Munich.
+        </p>
+        <p>
+          Mes intérêts de recherche portent sur la <strong>physique théorique et mathématique</strong> :
+          bien que je découvre encore beaucoup à travers mes cours, je n'ai pas encore une
+          image précise de ce que je veux faire — et j'assume cette ouverture comme partie du parcours.
+        </p>
+        <p>
+          Au-delà des équations, je suis <span class="emphasis">danseur de breakdance semi-professionnel</span> et <span class="emphasis">producteur de musique</span>.
+        </p>
+        <ul class="actions">
+          <li><a href="#research" class="button primary">La recherche...</a></li>
+          <li><a href="#contact" class="button">Me contacter</a></li>
+        </ul>
+      </article>
+
+      <!-- Formation -->
+      <article id="education">
+        <h2>Formation</h2>
+        <div class="timeline">
+
+          <div class="timeline-item current">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Ludwig-Maximilians-Universität (LMU)</div>
+                <div class="timeline-place">Munich, Allemagne &middot; Erasmus+</div>
+              </div>
+              <div class="timeline-date">2026 &ndash; Présent</div>
+            </div>
+            <div class="timeline-desc">
+              Programme avancé en Physique Théorique :
+              <span class="badge highlight">Théorie Quantique des Champs</span>
+              <span class="badge highlight">Physique des Particules</span>
+              <span class="badge highlight">Relativité Générale</span>
+            </div>
+          </div>
+
+          <div class="timeline-item current">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Université Paris-Saclay</div>
+                <div class="timeline-place">Orsay, France &middot; Magistère de Physique Fondamentale</div>
+              </div>
+              <div class="timeline-date">2025 &ndash; Présent</div>
+            </div>
+            <div class="timeline-desc">
+              Parcours avancé avec options en physique théorique :
+              <span class="badge">Physique Mathématique</span>
+              <span class="badge">Relativité Générale</span>
+              <span class="badge">Intégrales de Chemin</span>
+              <span class="badge">Cosmologie</span>
+              <span class="badge">Théorie des Groupes</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Lycée Albert Schweitzer</div>
+                <div class="timeline-place">Mulhouse, France &middot; CPGE (PCSI / PSI*)</div>
+              </div>
+              <div class="timeline-date">2022 &ndash; 2025</div>
+            </div>
+            <div class="timeline-desc">
+              Programme intensif de 3 ans en Mathématiques et Physique.
+              <br><span class="emphasis">Major de promotion</span>, PSI* &middot; 2024&ndash;2025
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title">Lycée Amélie Zurcher</div>
+                <div class="timeline-place">Wittelsheim, France &middot; Baccalauréat</div>
+              </div>
+              <div class="timeline-date">2019 &ndash; 2022</div>
+            </div>
+            <div class="timeline-desc">
+              Mention Très Bien, Section Européenne.
+              Spécialités : Physique-Chimie et Mathématiques (option Mathématiques expertes).
+            </div>
+          </div>
+
+        </div>
+
+        <h3>Distinctions</h3>
+        <div class="award">
+          <div class="title"><em>Major de promotion</em> &mdash; PSI*, Lycée Albert Schweitzer</div>
+          <div class="year">2024&ndash;2025</div>
+        </div>
+        <div class="award">
+          <div class="title"><em>Prix de l'Étudiant Méritant</em> &mdash; Lycée Albert Schweitzer</div>
+          <div class="year">2024</div>
+        </div>
+      </article>
+
+      <!-- Recherche -->
+      <article id="research">
+        <h2>Recherche</h2>
+
+        <h3>Stagiaire de Recherche en Physique Théorique</h3>
+        <p style="font-style: italic; opacity: .8; margin-bottom: .5rem;">
+          IJCLab, Orsay, France &middot; Juin&ndash;Juillet 2026
+        </p>
+        <ul>
+          <li>
+            Évaluation d'intégrales de Feynman de type <em>sunrise</em> à deux boucles utilisant la
+            <strong>représentation de Mellin-Barnes</strong> dans un environnement Mathematica
+            (<code class="inline">AMBRE</code>, <code class="inline">MBConicHulls</code>,
+            <code class="inline">MBResolve</code>, <code class="inline">SubTropica</code>).
+          </li>
+          <li>
+            Développement de <code class="inline">MBCHProcess</code>, un package Mathematica open-source
+            automatisant la simplification de séries complexes en
+            fonctions hypergéométriques généralisées
+            &rarr; <a href="https://github.com/yseyifou/MBCHProcess" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          </li>
+        </ul>
+
+      </article>
+
+      <!-- Projets -->
+      <article id="projects">
+        <h2>Projets</h2>
+        <p style="opacity: .85; margin-bottom: 2rem;">
+          Une sélection de projets personnels et collaboratifs. Le code est open-source lorsque possible.
+        </p>
+
+        <!-- MBCHProcess -->
+        <div class="project-card" data-tags="mathematica wolfram-language symbolic-computing feynman-integrals">
+          <div class="project-header">
+            <div>
+              <h4>MBCHProcess</h4>
+              <div class="meta">Package Wolfram Language &middot; Outil de recherche &middot; 2026</div>
+            </div>
+            <a href="https://github.com/yseyifou/MBCHProcess" target="_blank" rel="noopener noreferrer" class="repo-link">
+              <span class="icon brands fa-github"></span> Voir le repo
+            </a>
+          </div>
+          <p>
+            Package open-source automatisant la simplification de séries multi-variables
+            en <strong>fonctions hypergéométriques généralisées</strong>. Développé dans le cadre
+            de mon stage IJCLab sur les intégrales de Feynman de type sunrise à deux boucles,
+            c'est un add-on direct à <code class="inline">MBConicHulls</code>.
+          </p>
+          <div class="tags">
+            <span class="badge">Wolfram Language</span>
+            <span class="badge">Calcul symbolique</span>
+            <span class="badge highlight">Intégrales de Feynman</span>
+          </div>
+        </div>
+
+        <!-- Chladni Figures -->
+        <div class="project-card" data-tags="c numerical-methods pdes">
+          <div class="project-header">
+            <div>
+              <h4>Figures de Chladni</h4>
+              <div class="meta">Simulation numérique &middot; Physique mathématique</div>
+            </div>
+            <a href="https://github.com/yseyifou/Chladni-Figures" target="_blank" rel="noopener noreferrer" class="repo-link">
+              <span class="icon brands fa-github"></span> Voir le repo
+            </a>
+          </div>
+          <p>
+            Résolution numérique de l'<strong>équation de la plaque mince</strong> pour visualiser
+            les lignes nodales des modes vibratoires d'une plaque carrée. Produit les
+            motifs caractéristiques observés lorsque le sable s'accumule sur une surface vibrante.
+          </p>
+          <div class="tags">
+            <span class="badge">C++</span>
+            <span class="badge">Méthodes numériques</span>
+            <span class="badge highlight">EDP</span>
+          </div>
+        </div>
+
+        <!-- Lock-exchange -->
+        <div class="project-card" data-tags="python opencv fluid-mechanics gravity-currents">
+          <div class="project-header">
+            <div>
+              <h4>Écoulements lock-exchange</h4>
+              <div class="meta">Mécanique des fluides expérimentale &middot; avec Alban Maussang</div>
+            </div>
+          </div>
+          <p>
+            Étude expérimentale et numérique des courants de gravité dans un fluide stratifié.
+            Comparaison de nos mesures aux prédictions théoriques de
+            <strong>Benjamin (1968)</strong> et <strong>Shin et al. (2004)</strong>
+            sur la vitesse de propagation du front, la hauteur du courant et le nombre de Froude. <br>
+            Suivi du front par traitement d'image (seuillage + détection d'interface),
+            vitesse du front par régression linéaire sur \(x_f(t)\), et mesure
+            objective de la hauteur du courant par moyenne verticale de l'intensité des pixels. Résultats à \(Re \sim 10^4 - 10^5\).
+          </p>
+          <div class="tags">
+            <span class="badge">Python</span>
+            <span class="badge">OpenCV (cv2)</span>
+            <span class="badge highlight">Mécanique des fluides</span>
+            <span class="badge highlight">Courants de gravité</span>
+          </div>
+        </div>
+
+        <!-- TIPE EEG -->
+        <div class="project-card" data-tags="pure-data hardware signal-processing">
+          <div class="project-header">
+            <div>
+              <h4>T.I.P.E. 2024&ndash;2025 &mdash; Composer l'inaudible</h4>
+              <div class="meta">Quand les signaux biologiques deviennent musique</div>
+            </div>
+          </div>
+          <p>
+            Traduction de <strong>signaux EEG en mélodies</strong> à l'aide de
+            <code class="inline">Pure Data</code>. Conception et assemblage d'un dispositif
+            d'acquisition EEG basique (électrodes, amplification,
+            conditionnement du signal), puis sonification des données cérébrales en temps réel.
+          </p>
+          <div class="tags">
+            <span class="badge">Pure Data</span>
+            <span class="badge">Hardware</span>
+            <span class="badge">Traitement du signal</span>
+          </div>
+        </div>
+
+        <!-- TIPE Breakdance -->
+        <div class="project-card" data-tags="latis-pro classical-mechanics video-analysis">
+          <div class="project-header">
+            <div>
+              <h4>T.I.P.E. 2023&ndash;2024 &mdash; La rotation en breakdance</h4>
+              <div class="meta">Le mouvement headspin</div>
+            </div>
+          </div>
+          <p>
+            Analyse vidéo du <strong>mouvement headspin</strong> à l'aide de
+            <code class="inline">Latis Pro</code>. Modélisation de la dynamique du danseur :
+            conservation du moment cinétique, friction à l'interface tête-sol,
+            et contrôle de l'équilibre pendant la rotation soutenue.
+          </p>
+          <div class="tags">
+            <span class="badge">Latis Pro</span>
+            <span class="badge">Mécanique classique</span>
+            <span class="badge">Analyse vidéo</span>
+          </div>
+        </div>
+
+        <!-- Repos GitHub en direct -->
+        <h3>GitHub</h3>
+        <ul id="repo-list" class="repo-list" aria-live="polite">
+          <li class="repo-card">
+            <div class="repo-name"><a href="https://github.com/yseyifou/Chladni-Figures" target="_blank" rel="noopener noreferrer">Chladni-Figures</a></div>
+            <div class="repo-desc">Simulation numérique de plaques vibrantes et figures de Chladni</div>
+            <div class="repo-meta"><span class="lang">C++</span><span>★ 0</span><span>Mis à jour 2026-07-17</span></div>
+          </li>
+          <li class="repo-card">
+            <div class="repo-name"><a href="https://github.com/yseyifou/MBCHProcess" target="_blank" rel="noopener noreferrer">MBCHProcess</a></div>
+            <div class="repo-desc">Un plugin MBConicHulls qui fournit un résultat traité en termes de fonctions hypergéométriques généralisées</div>
+            <div class="repo-meta"><span class="lang">Wolfram Language</span><span>★ 0</span><span>Mis à jour 2026-07-15</span></div>
+          </li>
+        </ul>
+
+      </article>
+
+      <!-- Compétences -->
+      <article id="skills">
+        <h2>Compétences</h2>
+
+        <h3>Langues</h3>
+        <p>
+          <span class="badge highlight">Français &mdash; Langue maternelle</span>
+          <span class="badge highlight">Anglais &mdash; C1 (Cambridge)</span>
+          <span class="badge highlight">Allemand &mdash; B2</span>
+        </p>
+
+        <h3>Programmation &amp; Outils</h3>
+        <p>
+          <span class="badge" data-filter="python" tabindex="0" role="button" aria-label="Filtrer les projets par Python">Python</span>
+          <span class="badge" data-filter="c" tabindex="0" role="button" aria-label="Filtrer les projets par C">C</span>
+          <span class="badge" data-filter="mathematica" tabindex="0" role="button" aria-label="Filtrer les projets par Mathematica">Mathematica (Wolfram Language)</span>
+          <span class="badge">LaTeX</span>
+          <span class="badge" data-filter="pure-data" tabindex="0" role="button" aria-label="Filtrer les projets par Pure Data">Pure Data</span>
+          <span class="badge">Git</span>
+          <span class="badge" data-filter="latis-pro" tabindex="0" role="button" aria-label="Filtrer les projets par Latis Pro">Latis Pro</span>
+        </p>
+
+        <h3>Physique &amp; Mathématiques</h3>
+        <p>
+          <span class="badge">Théorie Quantique des Champs</span>
+          <span class="badge" data-filter="feynman-integrals" tabindex="0" role="button" aria-label="Filtrer les projets par Intégrales de Feynman">Intégrales de Feynman</span>
+          <span class="badge">Analyse Complexe</span>
+          <span class="badge">Théorie des Groupes</span>
+          <span class="badge">Relativité Générale</span>
+          <span class="badge">Intégrales de Chemin</span>
+          <span class="badge">Cosmologie</span>
+        </p>
+
+        <h3>En cours d'apprentissage</h3>
+        <ul>
+          <li>Théorie Quantique des Champs avancée — renormalisation, théories de jauge.</li>
+          <li>Relativité Générale — géométrie différentielle, trous noirs.</li>
+          <li>Analyse Complexe — intégration par contour, théorème des résidus.</li>
+        </ul>
+
+        <h3>Expérience d'enseignement</h3>
+        <ul>
+          <li>
+            <strong>Professeur STEM</strong> chez Alveus (France) &middot; depuis sept. 2024 &mdash;
+            Mathématiques et Physique-Chimie pour des lycéens.
+          </li>
+          <li>
+            <strong>Professeur particulier</strong> (Mulhouse, maintenant en visioconférence) &middot; depuis juillet 2023 &mdash;
+            Accompagnement personnalisé et suivi de progression.
+          </li>
+        </ul>
+      </article>
+
+      <!-- Arts -->
+      <article id="arts">
+        <h2>Arts &amp; Engagement</h2>
+
+        <h3>Compagnie de danse semi-professionnelle</h3>
+        <p style="font-style: italic; opacity: .8; margin-bottom: .5rem;">
+          Art'Corps Créative &middot; 2016 &ndash; Présent
+        </p>
+        <ul>
+          <li>Représentations annuelles dans des théâtres et festivals.</li>
+          <li>
+            <span class="emphasis">Podium</span> au
+            <strong>Apollo Theater, New York</strong> &mdash;
+            <em>Amateur Night</em> (octobre 2023).
+          </li>
+          <li>
+            <strong>Finaliste national</strong> à <em>Battle of the Year</em>,
+            Zénith de Montpellier (2019 et 2022).
+          </li>
+        </ul>
+
+        <p style="margin-top: 1.5rem;">
+          Cet engagement exigeant m'apporte un équilibre essentiel :
+          <strong>rigueur, dépassement de soi et créativité</strong>.
+          La musique complète ce contrepoint aux équations.
+        </p>
+      </article>
+
+      <!-- CV -->
+      <article id="cv">
+        <h2>CV</h2>
+
+        <div class="cv-section">
+          <h3>Formation</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Ludwig-Maximilians-Universität (LMU)</span>
+              <span class="cv-date">2026 &ndash; Présent</span>
+            </div>
+            <div class="cv-sub">Munich, Allemagne &middot; Programme Erasmus+, Département de Physique</div>
+            <ul>
+              <li>Programme avancé en Physique Théorique : Théorie Quantique des Champs, Physique des Particules, Relativité Générale.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Université Paris-Saclay</span>
+              <span class="cv-date">2025 &ndash; Présent</span>
+            </div>
+            <div class="cv-sub">Orsay, France &middot; Magistère de Physique Fondamentale</div>
+            <ul>
+              <li>Parcours avancé avec options en physique théorique : physique mathématique, relativité générale, intégrales de chemin, cosmologie, théorie des groupes.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Lycée Albert Schweitzer</span>
+              <span class="cv-date">2022 &ndash; 2025</span>
+            </div>
+            <div class="cv-sub">Mulhouse, France &middot; CPGE (PCSI / PSI*)</div>
+            <ul>
+              <li>Programme intensif de 3 ans en Mathématiques et Physique.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Lycée Amélie Zurcher</span>
+              <span class="cv-date">2019 &ndash; 2022</span>
+            </div>
+            <div class="cv-sub">Wittelsheim, France &middot; Baccalauréat</div>
+            <ul>
+              <li>Mention Très Bien, Section Européenne. Spécialités : Physique-Chimie et Mathématiques (option Mathématiques expertes).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Expérience de recherche</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Stagiaire de recherche en physique théorique</span>
+              <span class="cv-date">06.2026 &ndash; 07.2026</span>
+            </div>
+            <div class="cv-sub">IJCLab, Orsay, France</div>
+            <ul>
+              <li>Évaluation d'intégrales de Feynman de type sunrise à deux boucles utilisant la représentation de Mellin-Barnes dans un environnement Mathematica (<code class="inline">AMBRE</code>, <code class="inline">MBConicHulls</code>, <code class="inline">MBResolve</code>, <code class="inline">SubTropica</code>).</li>
+              <li>Développement de <code class="inline">MBCHProcess</code>, un package Mathematica open-source automatisant la simplification de séries complexes en fonctions hypergéométriques généralisées.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Projets académiques</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Écoulements lock-exchange</span>
+              <span class="cv-date">2024 &ndash; 2025</span>
+            </div>
+            <div class="cv-sub">Mécanique des fluides expérimentale &middot; avec Alban Maussang</div>
+            <ul>
+              <li>Étude expérimentale et numérique des courants de gravité dans un fluide stratifié. Comparaison des mesures aux prédictions théoriques de Benjamin (1968) et Shin et al. (2004).</li>
+              <li>Suivi du front par traitement d'image, vitesse du front par régression linéaire, mesure objective de la hauteur du courant. Résultats à Re ~ 10^4 - 10^5.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">T.I.P.E. 2024&ndash;2025 &mdash; Composer l'inaudible</span>
+            </div>
+            <div class="cv-sub">Quand les signaux biologiques deviennent musique</div>
+            <ul>
+              <li>Traduction de signaux EEG en mélodies à l'aide de Pure Data. Conception et développement d'un dispositif EEG basique.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">T.I.P.E. 2023&ndash;2024 &mdash; La rotation en breakdance</span>
+            </div>
+            <div class="cv-sub">Le mouvement headspin</div>
+            <ul>
+              <li>Analyse vidéo réalisée avec Latis Pro. Modélisation de la dynamique du danseur.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Expérience professionnelle</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Professeur STEM</span>
+              <span class="cv-date">09.2024 &ndash; Présent</span>
+            </div>
+            <div class="cv-sub">Alveus, France</div>
+            <ul>
+              <li>Cours particuliers à des lycéens et collégiens en Mathématiques et Physique-Chimie.</li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Professeur particulier</span>
+              <span class="cv-date">07.2023 &ndash; Présent</span>
+            </div>
+            <div class="cv-sub">Mulhouse (maintenant en visioconférence)</div>
+            <ul>
+              <li>Cours particuliers de Mathématiques et de Physique à des lycéens : accompagnement personnalisé et suivi de progression.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Distinctions</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Major de promotion</span>
+              <span class="cv-date">2024&ndash;2025</span>
+            </div>
+            <div class="cv-sub">PSI*, Lycée Albert Schweitzer</div>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Prix de l'Étudiant Méritant</span>
+              <span class="cv-date">2024</span>
+            </div>
+            <div class="cv-sub">Lycée Albert Schweitzer</div>
+          </div>
+        </div>
+
+        <div class="cv-section">
+          <h3>Compétences</h3>
+          <ul>
+            <li><strong>Langues</strong> : Français (Langue maternelle), Anglais (C1 &ndash; Cambridge), Allemand (B2).</li>
+            <li><strong>Programmation &amp; Outils</strong> : Python, C, Mathematica (Wolfram Language), LaTeX, Pure Data.</li>
+          </ul>
+        </div>
+
+        <div class="cv-section">
+          <h3>Arts &amp; Engagement</h3>
+
+          <div class="cv-item">
+            <div class="cv-head">
+              <span class="cv-title">Compagnie de danse semi-professionnelle</span>
+              <span class="cv-date">2016 &ndash; Présent</span>
+            </div>
+            <div class="cv-sub">Art'Corps Créative</div>
+            <ul>
+              <li>Représentations annuelles (théâtres, festivals).</li>
+              <li><strong>Compétitions</strong> : Amateur Night, Apollo Theater (New York, podium, oct. 2023) ; Battle of the Year, Zénith de Montpellier (Finales nationales, 2019 et 2022).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="cv-actions">
+          <a href="/files/cv.pdf" class="button primary">Télécharger le CV (PDF)</a>
+          <button type="button" class="button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+        </div>
+      </article>
+
+      <!-- Contact -->
+      <article id="contact">
+        <h2>Contact</h2>
+        <p>
+          Le moyen le plus rapide de me contacter est par email. Je suis toujours heureux de discuter
+          de physique, de mathématiques ou de collaborations potentielles.
+        </p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="icon solid fa-envelope"></span>
+            <a href="mailto:yanis.seyifou@universite-paris-saclay.fr">yanis.seyifou@universite-paris-saclay.fr</a>
+          </li>
+          <li>
+            <span class="icon solid fa-envelope"></span>
+            <a href="mailto:yanis.seyifou@proton.me">yanis.seyifou@proton.me</a>
+          </li>
+          <li>
+            <span class="icon brands fa-github"></span>
+            <a href="https://github.com/yseyifou" target="_blank" rel="noopener noreferrer">github.com/yseyifou</a>
+          </li>
+          <li>
+            <span class="icon brands fa-linkedin-in"></span>
+            <a href="https://www.linkedin.com/in/yanis-seyifou" target="_blank" rel="noopener noreferrer">linkedin.com/in/yanis-seyifou</a>
+          </li>
+          <li>
+            <span class="icon solid fa-map-marker-alt"></span>
+            <span>Paris &rarr; Munich</span>
+          </li>
+        </ul>
+
+        <p style="margin-top: 1.5rem; font-size: .9rem; opacity: .8;">
+          <a href="/files/cv.pdf" class="button">Télécharger le CV (PDF)</a>
+        </p>
+      </article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p class="copyright">&copy; Yanis Seyifou. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+
+  </div>
+
+  <!-- Scripts du template Dimension -->
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/browser.min.js"></script>
+  <script src="/assets/js/breakpoints.min.js"></script>
+  <script src="/assets/js/util.js"></script>
+  <script src="/assets/js/main.js"></script>
+
+  <!-- Scripts personnalisés -->
+  <script defer src="/assets/js/fx.js"></script>
+  <script defer src="/assets/js/ui.js"></script>
+
+</body>
+</html>

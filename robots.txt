@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yseyifou.github.io/sitemap.xml
