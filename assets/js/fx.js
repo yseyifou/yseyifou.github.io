@@ -19,8 +19,9 @@
 	var ctx = canvas.getContext('2d');
 	var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-	var LINK_DIST = 120;
-	var POINTER_RADIUS = 140;
+	var LINK_DIST = 140;
+	var POINTER_RADIUS = 180;
+	var POINTER_FORCE = 0.5;
 
 	var particles = [];
 	var rafId = null;
@@ -40,7 +41,7 @@
 		return 0.40;
 	}
 
-	var currentOpacity = 0.40;
+	var currentOpacity = 0;
 
 	/* ---------------------------------------------------------------- */
 	/* Sizing                                                            */
@@ -58,7 +59,7 @@
 	}
 
 	function particleCount() {
-		return Math.max(24, Math.min(70, Math.round((w * h) / 26000)));
+		return Math.max(40, Math.min(120, Math.round((w * h) / 12000)));
 	}
 
 	function initParticles() {
@@ -68,8 +69,8 @@
 			particles.push({
 				x: Math.random() * w,
 				y: Math.random() * h,
-				vx: (Math.random() - 0.5) * 0.4,
-				vy: (Math.random() - 0.5) * 0.4,
+				vx: (Math.random() - 0.5) * 0.3,
+				vy: (Math.random() - 0.5) * 0.3,
 				r: Math.random() * 1.6 + 0.6
 			});
 		}
@@ -104,7 +105,7 @@
 				dy = p.y - pointer.y;
 				d = Math.sqrt(dx * dx + dy * dy);
 				if (d < POINTER_RADIUS && d > 0.01) {
-					var f = (1 - d / POINTER_RADIUS) * 0.35;
+					var f = (1 - d / POINTER_RADIUS) * POINTER_FORCE;
 					p.vx += (dx / d) * f;
 					p.vy += (dy / d) * f;
 				}
@@ -141,7 +142,7 @@
 				}
 			}
 		}
-		ctx.strokeStyle = 'rgba(160, 237, 228, .22)';
+		ctx.strokeStyle = 'rgba(160, 237, 228, .30)';
 		ctx.lineWidth = 1;
 		ctx.stroke();
 	}

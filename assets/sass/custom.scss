@@ -24,12 +24,12 @@
 	);
 }
 
-/* Veil at 0.70: the header and footer are white text directly on the image.
+/* Veil at 0.80: the header and footer are white text directly on the image.
    The top-centre of fond.jpg is near-white (#fdfdf3).
-   0.50 (template default) = 3.52:1 → fails WCAG AA. 0.70 = 6.84:1. */
+   0.50 (template default) = 3.52:1 → fails WCAG AA. 0.80 = 9.90:1. */
 #bg::before {
 	background-image:
-		linear-gradient(to top, rgba(19, 21, 25, .70), rgba(19, 21, 25, .70)),
+		linear-gradient(to top, rgba(19, 21, 25, .80), rgba(19, 21, 25, .80)),
 		url('/images/overlay.png');
 }
 
